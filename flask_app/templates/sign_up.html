@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %} 
+<div style="margin-top: 40px;">
+    <form method="POST">
+        <label for="fname"> FIRST NAME</label> 
+        <input placeholder="Peter" type ="text" id="fname" name="fname" class="form-control"> 
+        <br>
+
+
+        <label for="lname"> LAST NAME</label> 
+        <input placeholder="Petigrew" type ="text" id="lname" name="lname" class="form-control"> 
+        <br>
+
+        <label for="password1"> PASSWORD</label> 
+        <input placeholder="password" type ="text" id="password1" name="password1" class="form-control"> 
+        <br>
+
+        <label for="password2">PASSWORD AGAIN</label> 
+        <input placeholder="password AGAIN" type ="text" id="password2" name="password2" class="form-control"> 
+        <br>
+
+        <input type="submit" name="sumbit" id="submit" class="btn btn-primary">
+
+        
+    
+    </form>
+</div>
+
+{% endblock %}
