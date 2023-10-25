@@ -16,13 +16,17 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <style>
+      html {
+          user-select: none;
+      }
+  </style>
     <title> {% block title %} {% endblock%}</title>    
 </head>
 <body class="bg-dark" style="color:#666891">
     <nav class = "navbar navbar-expand-lg navbar-dark" style="background-color:#302e2e">
         <button class = "navbar-toogler" type = "button" data-toogle="collapse" data-target="#navbar">
             <span class= "navbar-toogler-icon"></span>
-            
             </button>
 
     <div class = "collapse navbar-collapse" id = "navbar">
@@ -30,6 +34,10 @@
       {% if user.is_authenticated %}
         <a class = "nav-item nav-link" id = "log_out" href="/log_out">LOG OUT</a>
         <a class = "nav-item nav-link" id = "home" href="/"> HOME</a>
+        <a class = "nav-item nav-link" id = "profile" href ="/profile"> PROFILE</a>
+        <a class = "nav-item nav-link" id = "friends" href ="/friends"> FRIENDS </a>
+        <a class = "nav-item nav-link" id = "qr_code" href ="/qr_code"> YOUR QR CODE </a>
+
       {% else  %}
         <a class = "nav-item nav-link" id = "login" href="/login">LOGIN</a>
         <a class = "nav-item nav-link" id = "sign_up" href="/sign_up">SIGN UP</a>
@@ -38,7 +46,6 @@
     </div>
 
     </nav>
-    
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

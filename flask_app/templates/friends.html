@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="{{url_for('static', filename = "index.js")}}" > </script>
+{% for alert in alerts %}
+   <p>request from {{alert}}</p>
+ <form method = "post" action="/remove_alert_accept/{{alert}}" id={alert}> 
+    <input id = "accept" name = "accept" value="acc" type="submit" onClick="delete_form(alert)"> <label for="accept">ACCEPT</label>
+   </form>
+    <form method="post" action="/remove_alert_decline/{{alert}}" id={alert}>
+    <input id = "decline" name="decline" value="dec" type="submit"> <label for="decline"> DECLINE</label>
+   </form>
+    {%endfor%}
+    <h4> your friends: <br></h4>
+{% for friend in friends %}
+   <h5> {{friend}}  <br></h5>
+{% endfor %}
+ <form method="post" action="/add_friend">
+    <input type="text" name="name">
+    <input type="submit" value="ADD FRIEND">
+ </form>
+{% endblock %}

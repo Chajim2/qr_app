@@ -1,0 +1,8 @@
+1. generate a secret key for each user
+2. require secret key upon adding friend
+3. generate a qr code with this secret code
+4. if added sucesfully change the secret code so that user cant just send it 
+5. completly done, finished 
+
+
+bonus disable screenshotting through    

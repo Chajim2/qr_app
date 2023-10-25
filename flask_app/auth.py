@@ -3,6 +3,7 @@ from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+from PIL import Image
 
 
 auth = Blueprint('auth',__name__)
@@ -50,5 +51,11 @@ def sign_up():
             login_user(new_usr, remember = True)
 
             flash("singed_in",category="succes")
+
+            anonym = Image.open("flask_app/static/anonymous.jpg")
+            new_img = anonym.copy()
+            new_img = new_img.save(f"flask_app/static/{new_usr.id}.png")
+            
             return redirect(url_for('views.home'))
+        
     return render_template("sign_up.html", user = current_user)

@@ -30,13 +30,6 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-    @app.context_processor
-    def utility_functions():
-        def print_in_console(message):
-            print (message)
-
-        return dict(mdebug=print_in_console)
-
 
     return app
 
@@ -46,4 +39,4 @@ def create_db(app,db):
         with app.app_context():
             db.create_all()
         print('CREATED DATABESa')
-
+ 

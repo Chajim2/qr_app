@@ -5,7 +5,7 @@
 <ul clas="list-group list-group-flush" id = 'notes'>
     {% for note in user.notes %}
     <li class="list-group-item">{{note.content}}</li>
-    <button type ='button'class='close' onClick="deleteNote({{note.id}})" style="color:#666891">delete</button>
+    <button type ='button'class='close' onClick="deleteNote({{note.id}})" style="color:#666891"> delete </button>
     <br>
     <br>
     {% endfor %}
